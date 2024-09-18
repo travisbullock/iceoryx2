@@ -117,5 +117,3 @@ struct iox2_sigaction {
         #define sched_priority __sched_priority
     #endif
 #endif
-
-#endif // IOX2_PAL_POSIX_H
