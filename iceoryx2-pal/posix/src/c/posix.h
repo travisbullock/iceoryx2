@@ -115,5 +115,6 @@ struct iox2_sigaction {
     #if !__GLIBC_PREREQ(2, 34)
         // For older glibc versions, map sched_priority to __sched_priority
         #define sched_priority __sched_priority
+        #define SIGPOLL SIGIO
     #endif
 #endif
