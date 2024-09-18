@@ -109,3 +109,13 @@ struct iox2_sigaction {
     int iox2_sa_flags;
 };
 #endif
+
+// Redefine access to sched_priority to use the correct field
+#ifdef __GLIBC_PREREQ
+    #if !__GLIBC_PREREQ(2, 34)
+        // For older glibc versions, map sched_priority to __sched_priority
+        #define sched_priority __sched_priority
+    #endif
+#endif
+
+#endif // IOX2_PAL_POSIX_H
